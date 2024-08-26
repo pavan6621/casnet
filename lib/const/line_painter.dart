@@ -14,12 +14,13 @@ class LinePainter extends CustomPainter {
     final paint = Paint()
       ..color = Colors.white
       ..strokeWidth = 1.0;
-
+_drawDottedLine(canvas, buttonPositions[0], buttonPositions[buttonPositions.length-1], paint);
     for (int i = 0; i < buttonPositions.length; i++) {
-        var j = i+3;
+        var j = i+1;
         _drawDottedLine(canvas, buttonPositions[i], buttonPositions[j], paint);
     
     }
+    
   }
 
   void _drawDottedLine(Canvas canvas, Offset p1, Offset p2, Paint paint) {

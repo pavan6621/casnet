@@ -76,21 +76,20 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
   - lib/assests/appicon512.png
-  - lib/assests/cloud1.png
-  - lib/assests/maincloud.png
-  # - lib/assests/image 1.png
-  # - lib/assests/image 2.png
-  # - lib/assests/image 6.png
   - lib/assests/python.png
+  - lib/assests/angular.png
+  - lib/assests/c++.png
+  - lib/assests/html.png
   - lib/assests/react.png
+  - lib/assests/java.png
   - lib/assests/Ellipse 9.png
   - lib/assests/graphic.png
   - lib/assests/Google_icon.png
-  - lib/assests/Isolation_Mode (1).png
   - lib/assests/google-button.png
-  # - lib/assests/Untitled document (6).docx
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  - lib/assests/Aws.png
+  - lib/assests/Javascript.png
+  - lib/assests/kotlin.png
+  - lib/assests/MS.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
