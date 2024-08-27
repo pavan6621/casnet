@@ -197,11 +197,21 @@ class Summeryscreen extends StatelessWidget {
 
   Widget _buildTitle() {
     return Center(
-      child: Text(
-        "Suggested Sites",
-        style: GoogleFonts.workSans(
-          textStyle: TextStyle(color: Colors.white, fontSize: 25),
-        ),
+      child: Column(
+        children: [
+          Text(
+            "Suggested Sites for",
+            style: GoogleFonts.workSans(
+              textStyle: TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ),
+          Text(
+            "${Globals.summerdata}",
+            style: GoogleFonts.workSans(
+              textStyle: TextStyle(color: Colors.white, fontSize: 25),
+            ),
+          ),
+        ],
       ),
     );
   }

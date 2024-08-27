@@ -101,7 +101,7 @@ class _LinkscreenState extends State<Linkscreen> {
   final GoogleSignIn _googleSignIn = GoogleSignIn();
   final FirebaseAuth _auth = FirebaseAuth.instance;
   bool isLoading = true; // State to manage the loading indicator
-
+  late WebViewController _webViewController;
   Future<void> _signOut() async {
     await _auth.signOut();
     await _googleSignIn.signOut();
@@ -171,6 +171,9 @@ class _LinkscreenState extends State<Linkscreen> {
                   isLoading = false;
                 });
               },
+              onWebViewCreated: (controller) {
+              _webViewController = controller;
+            },
               onWebResourceError: (error) {
                 print('WebView error: ${error.description}');
               },

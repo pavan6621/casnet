@@ -609,15 +609,15 @@ print("Globals.imagetext${Globals.imagetext}");
     links.shuffle(Random());
 
     while (newButtonPositions.length < links.length) {
-      double randomX = ((random.nextDouble() * 200) + 80);
+      double randomX = ((random.nextDouble() * 100) + 80);
       double randomY = (random.nextDouble() * (newButtonPositions.length * 60) + 300);
 
-      Offset newPosition = Offset(randomX + 25, randomY + 25);
+      Offset newPosition = Offset(randomX + 25, randomY+ 25);
       bool overlaps = false;
       for (Offset position in newButtonPositions) {
         if ((newPosition.dx < position.dx + buttonDiameter &&
-            newPosition.dx + buttonDiameter > position.dx &&
-            newPosition.dy < position.dy + buttonDiameter &&
+            newPosition.dx +  buttonDiameter > position.dx &&
+            newPosition.dy <position.dy + buttonDiameter &&
             newPosition.dy + buttonDiameter > position.dy)) {
           overlaps = true;
           break;
@@ -633,27 +633,22 @@ print("Globals.imagetext${Globals.imagetext}");
             top: randomY,
             child: GestureDetector(
               onTap: () {
+                Globals.imagesave = imageUrl;
+                Globals.summerdata = imageUrl;
                 fetchData(imageUrl);
               },
               child: ClipOval(
                 child: Container(
-                  color: Color(0xFFD9D9D9),
-                  child: Stack(
-                    children: [
-                      Image.asset(
-                        "lib/assests/Ellipse 9.png",
-                        width: 72.88,
-                        height: 72.88,
-                      ),
-                      Positioned(
-                        child: Image.asset(
+                  color: imageUrl==Globals.imagesave? Color.fromARGB(255, 173, 248, 168): Color.fromARGB(255, 245, 227, 227),
+                  child: 
+                     Image.asset(
                           "lib/assests/$imageUrl.png",
-                          width: 82.88,
-                          height: 82.88,
-                        ),
-                      ),
-                    ],
-                  ),
+                          width: 72.88,
+                          height: 72.88,
+                          
+                        )
+                    
+                  
                 ),
               ),
             ),
@@ -683,7 +678,6 @@ print("Globals.imagetext${Globals.imagetext}");
         await Navigator.pushReplacementNamed(context, navigate_Summeryscreen, arguments: value);
       }
       if (value["Type"] == "link") {
-        
         await Navigator.pushReplacementNamed(context, navigate_Summeryscreen, arguments: value);
       }
     } else {

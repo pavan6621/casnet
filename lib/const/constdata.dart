@@ -17,6 +17,8 @@ class Globals {
   static List<String> imagedata = [];
   static String imagetext = "data1";
   static String imagetype = "value";
+  static String imagesave = "value";
+  static dynamic summerdata = "value";
   static Map<String, dynamic> Summerydata = {};
   static int _currentIndex = -1;
   static var dataQ = "data1";

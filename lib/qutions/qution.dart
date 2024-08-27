@@ -82,6 +82,8 @@ class QutionState extends State<Qution> {
            Globals.imagedata.clear();
            Globals.imagetext = "";
            Globals.imagetype = "";
+          // String datatext = value["Text"];
+           Globals.summerdata=questions;
           await Navigator.pushReplacementNamed(context, navigate_Summeryscreen, arguments: value);
         }
         print(f);
@@ -100,6 +102,7 @@ class QutionState extends State<Qution> {
   void updateQuestions(String newQuestions) {
     setState(() {
       Globals.addData(newQuestions);
+      
       questions = Globals.dataList[Globals.currentIndex];
       fetchData();
     });
@@ -139,9 +142,9 @@ class QutionState extends State<Qution> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: isLoading
-          ? Container(color: Colors.black, child: Center(child: CircularProgressIndicator()))
+          ? Container(color: Colors.black, child:const Center(child: CircularProgressIndicator()))
           : value.isEmpty
-              ? Center(child: Text('No data available'))
+              ? const Center(child: Text('No data available'))
               : Container(
                   color: Colors.black,
                   child: Padding(
@@ -198,13 +201,16 @@ class QutionState extends State<Qution> {
                                     });
                                     updateQuestions(button);
                                   },
-                                  child: Text(
-                                    button,
-                                    style: GoogleFonts.workSans(
-                                      textStyle: const TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w200,
+                                  child: Padding(
+                                    padding: const EdgeInsets.all(20),
+                                    child: Text(
+                                      button,
+                                      style: GoogleFonts.workSans(
+                                        textStyle: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w200,
+                                        ),
                                       ),
                                     ),
                                   ),
@@ -218,7 +224,7 @@ class QutionState extends State<Qution> {
                             onPressed: _removeData,
                              style: OutlinedButton.styleFrom(
     backgroundColor: Colors.black, 
-    side: BorderSide(color: const Color.fromARGB(255, 95, 99, 156), width: 2.0), 
+    side: const BorderSide(color: const Color.fromARGB(255, 95, 99, 156), width: 2.0), 
     shape: RoundedRectangleBorder(
       borderRadius: BorderRadius.circular(8.0),
     ),
@@ -226,7 +232,7 @@ class QutionState extends State<Qution> {
           
                             child: Container(
                              width: 100,
-                              child: Row(
+                              child: const Row(
                                 children: [
                                  Icon( Icons.arrow_left, ),
                                   Text(
